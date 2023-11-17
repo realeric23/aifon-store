@@ -1,7 +1,0 @@
-{
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindcss.preprocessor": true,
-  "tailwindcss.plugins": ["./path/to/your/tailwindcss/config.js"],
-  "tailwindcss.config": "./path/to/your/tailwindcss/config.js",
-  "tailwindcss.format": "auto"
-}
