@@ -3,7 +3,7 @@ import CheckoutProduct from "@/components/CheckoutProduct";
 import Header from "@/components/Header";
 import { selectBasketItems, selectBasketTotal } from "@/redux/basketSlice";
 import { fetchPostJSON } from "@/utils/api-helper";
-import getStripe from "@/utils/get-stipe";
+import getStripe from "@/utils/get-stripe";
 import { ChevronDownIcon } from "@heroicons/react/outline";
 import Head from "next/head";
 import { useRouter } from "next/router";

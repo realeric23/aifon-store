@@ -6,22 +6,27 @@ import { fetchCategories } from "@/utils/fetchCategories";
 import { fetchProducts } from "@/utils/fetchProducts";
 import { Tab } from "@headlessui/react";
 import { GetServerSideProps, NextPage } from "next";
+import { Session } from "next-auth";
+import { getSession } from "next-auth/react";
 import Head from "next/head";
 
 interface Props {
   categories: Category[];
   products: Product[];
+  session: Session | null;
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   try {
     const categories = await fetchCategories();
     const products = await fetchProducts();
+    const session = await getSession(context);
 
     return {
       props: {
         categories,
         products,
+        session,
       },
     };
   } catch (error) {
