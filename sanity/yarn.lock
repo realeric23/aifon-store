@@ -1644,7 +1644,7 @@
     golden-fleece "^1.0.9"
     pkg-dir "^5.0.0"
 
-"@sanity/client@^6.8.5":
+"@sanity/client@^6.8.5", "@sanity/client@^6.8.6":
   version "6.8.6"
   resolved "https://registry.yarnpkg.com/@sanity/client/-/client-6.8.6.tgz#e5bc98c525f50ef8c2ecf1f41c1ea8441b9ac9a6"
   integrity sha512-Va4KZ4mRnyIbV+61VIJ+Op/amNAwWTo/ET3egtnEqPuXYLg60VWffNoAtAjuaZ5qM9BpTOCGJZjTKCHq+/5CEw==
@@ -1800,6 +1800,14 @@
   integrity sha512-yiAwDqn058GD4rGl7hGVNH21rqR5hQlk0LBLB2BX4qnrxrqZ30+xFHwjgRM8EYFN51VspEbtov2jQmCijlIOpg==
   dependencies:
     "@sanity/client" "^6.8.5"
+    "@types/react" "^18.0.25"
+
+"@sanity/types@^3.20.1":
+  version "3.20.1"
+  resolved "https://registry.yarnpkg.com/@sanity/types/-/types-3.20.1.tgz#e6be0c16f649435f8d6a9e81ce7742b7a4fa385a"
+  integrity sha512-1w/pRjvoTe7aBNhjj33wMnQfdDuiP+c9GtXXu3e5MDr6Pru7cgPcOVvu3jSwnb5dLoAbBRttYcZZ686yxPOK8A==
+  dependencies:
+    "@sanity/client" "^6.8.6"
     "@types/react" "^18.0.25"
 
 "@sanity/ui@^1.9.3":
