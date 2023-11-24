@@ -36,14 +36,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       props: {
         categories: [],
         products: [],
+        session: null,
       },
     };
   }
 };
 
 const Home = ({ categories, products }: Props) => {
-  console.log("products", products);
-
   const showProducts = (index: number) => {
     return products
       .filter((product) => product.category._ref === categories[index]._id)

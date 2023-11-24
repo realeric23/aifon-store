@@ -1,6 +1,7 @@
+import {visionTool} from '@sanity/vision'
+import {account, user} from 'next-auth-sanity/schemas'
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 
 export default defineConfig({
@@ -13,6 +14,6 @@ export default defineConfig({
   plugins: [deskTool(), visionTool()],
 
   schema: {
-    types: schemaTypes,
+    types: schemaTypes.concat([user, account]),
   },
 })

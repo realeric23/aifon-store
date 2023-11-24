@@ -14,13 +14,14 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Currency from "react-currency-formatter";
+import { useSession } from "next-auth/react";
 
 interface Props {
   products: StripeProduct[];
 }
 
 function Success({ products }: Props) {
-  console.log("products", products);
+  const { data: session } = useSession();
   const router = useRouter();
   const { session_id } = router.query;
   const [mounted, setMounted] = useState(false);
@@ -82,8 +83,7 @@ function Success({ products }: Props) {
                 Order #{session_id?.slice(-5)}
               </p>
               <h4 className="text-lg">
-                Thank you{" "}
-                {/*  {session ? session.user?.name.split(" ")[0] : "Guest"} */}
+                Thank you {session ? session.user?.name.split(" ")[0] : "Guest"}
               </h4>
             </div>
           </div>
