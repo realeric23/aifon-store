@@ -1,9 +1,18 @@
 export const fetchProducts = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/getProducts`
-  );
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/getProducts`
+    );
 
-  const data = await res.json();
-  const products: Product[] = data.products;
-  return products;
+    if (!res.ok) {
+      throw new Error("Failed to fetch products");
+    }
+
+    const data = await res.json();
+    const products: Product[] = data.products;
+    return products;
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    return [];
+  }
 };
