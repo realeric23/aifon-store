@@ -15,7 +15,22 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const categories = await sanityClient.fetch(query);
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+  );
 
-  res.status(200).json({ categories });
+  try {
+    const categories = await sanityClient.fetch(query);
+
+    res.status(200).json({ categories });
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+  }
 }

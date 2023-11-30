@@ -29,6 +29,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "sanity/schemas/product.js"
-, "src/pages/api/auth/[...nextauth].ts"  ],
+, "src/pages/api/auth/[...nextauth].js"  ],
   "exclude": ["node_modules"]
 }

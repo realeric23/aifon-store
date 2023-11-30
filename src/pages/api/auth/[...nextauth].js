@@ -1,13 +1,13 @@
-import NextAuth, { NextAuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 import { SanityAdapter } from "next-auth-sanity";
 import GoogleProvider from "next-auth/providers/google";
 import { sanityClient } from "../../../../sanity";
 
-const options: NextAuthOptions = {
+export default NextAuth({
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
   session: {
@@ -15,6 +15,4 @@ const options: NextAuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   adapter: SanityAdapter(sanityClient),
-};
-
-export default NextAuth(options);
+});
