@@ -11,6 +11,7 @@ const Product: SchemaTypeDefinition = {
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -35,11 +36,13 @@ const Product: SchemaTypeDefinition = {
       title: 'Category',
       type: 'reference',
       to: [{type: 'category'}],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'price',
       title: 'Price',
       type: 'number',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',

@@ -45,7 +45,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 const Home = ({ categories, products }: Props) => {
   const showProducts = (index: number) => {
     return products
-      .filter((product) => product.category._ref === categories[index]._id)
+      .filter(
+        (product) =>
+          product.category && product.category._ref === categories[index]._id
+      )
       .map((product) => <Product product={product} key={product._id} />);
   };
 
