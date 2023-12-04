@@ -43,14 +43,17 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 const Home = ({ categories, products }: Props) => {
-  const showProducts = (index: number) => {
+  const showProducts = (categoryId: string) => {
     return products
       .filter(
-        (product) =>
-          product.category && product.category._ref === categories[index]._id
+        (product) => product.category && product.category._ref === categoryId
       )
       .map((product) => <Product product={product} key={product._id} />);
   };
+
+  const categoriesWithProducts = categories.filter((category) =>
+    products.some((product) => product.category?._ref === category._id)
+  );
 
   return (
     <>
@@ -75,7 +78,7 @@ const Home = ({ categories, products }: Props) => {
 
           <Tab.Group>
             <Tab.List className="flex justify-center">
-              {categories.map((category) => (
+              {categoriesWithProducts.map((category) => (
                 <Tab
                   key={category._id}
                   id={category._id}
@@ -91,12 +94,12 @@ const Home = ({ categories, products }: Props) => {
                 </Tab>
               ))}
             </Tab.List>
-            {/*  TODO: MAP PRODUCTS */}
             <Tab.Panels className="mx-auto max-w-fit pt-10 pb-24 sm:px-4">
-              <Tab.Panel className="tabPanel">{showProducts(0)}</Tab.Panel>
-              <Tab.Panel className="tabPanel">{showProducts(1)}</Tab.Panel>
-              <Tab.Panel className="tabPanel">{showProducts(2)}</Tab.Panel>
-              <Tab.Panel className="tabPanel">{showProducts(3)}</Tab.Panel>
+              {categoriesWithProducts.map((category) => (
+                <Tab.Panel key={category._id} className="tabPanel">
+                  {showProducts(category._id)}
+                </Tab.Panel>
+              ))}
             </Tab.Panels>
           </Tab.Group>
         </div>
