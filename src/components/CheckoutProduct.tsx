@@ -28,8 +28,8 @@ function CheckoutProduct({ id, items }: Props) {
       <div className="relative h-44 w-44">
         <Image
           src={urlFor(items[0].image[0]).url()}
-          layout="fill"
-          objectFit="contain"
+          fill
+          style={{ objectFit: "contain" }}
           alt={items[0].title}
         />
       </div>

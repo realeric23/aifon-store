@@ -53,8 +53,8 @@ function Success({ products }: Props) {
           <div className="relative ml-4 h-16 w-8 cursor-pointer transition lg:hidden">
             <Image
               src="https://rb.gy/vsvv2o"
-              layout="fill"
-              objectFit="contain"
+              fill
+              style={{ objectFit: "contain" }}
               alt="Aifon Store Logo"
             />
           </div>
@@ -67,8 +67,8 @@ function Success({ products }: Props) {
             <div className="relative ml-14 hidden h-24 w-12 cursor-pointer transition lg:inline-flex">
               <Image
                 src="https://rb.gy/vsvv2o"
-                layout="fill"
-                objectFit="contain"
+                fill
+                style={{ objectFit: "contain" }}
                 alt="Aifon Store Logo"
               />
             </div>
@@ -163,8 +163,8 @@ function Success({ products }: Props) {
                           {/*    TODO: MAP IMAGE PRODUCT */}
                           <Image
                             src="https://rb.gy/vsvv2o"
-                            layout="fill"
-                            objectFit="contain"
+                            fill
+                            style={{ objectFit: "contain" }}
                             alt="Apple"
                           />
                         </div>
