@@ -2,10 +2,11 @@ import { ChevronDownIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 
 import Currency from "react-currency-formatter";
-import { removeFromBasket } from "../redux/basketSlice";
-import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
 import { urlFor } from "../../sanity";
+import { removeFromBasket } from "../redux/basketSlice";
 
 interface Props {
   items: Product[];
@@ -13,6 +14,8 @@ interface Props {
 }
 
 function CheckoutProduct({ id, items }: Props) {
+  const { t } = useTranslation();
+  const SCREEN_NAME = "checkoutProduct";
   const dispatch = useDispatch();
 
   const removeItemFromBasket = () => {
@@ -45,7 +48,7 @@ function CheckoutProduct({ id, items }: Props) {
           </div>
 
           <p className="flex cursor-pointer items-end text-blue-500 hover:underline">
-            Show product details
+            {t(`${SCREEN_NAME}.showDetails`)}
             <ChevronDownIcon className="h-6 w-6" />
           </p>
         </div>
@@ -60,7 +63,7 @@ function CheckoutProduct({ id, items }: Props) {
             onClick={removeItemFromBasket}
             className="text-blue-500 hover:underline"
           >
-            Remove
+            {t(`${SCREEN_NAME}.remove`)}
           </button>
         </div>
       </div>

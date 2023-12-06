@@ -1,0 +1,63 @@
+{
+  "checkout": {
+    "appleCard": "with Apple Card",
+    "button": "Check Out with Apple Card Monthly Installments",
+    "button1": "Check Out",
+    "checkout": "How would you like to check out?",
+    "conditions": "$0.00 due today, which includes applicable full-price items, down payments, shipping, and taxes.",
+    "fullPrice": "Pay in full",
+    "hardcodedPrice": "$283.16/mo. at 0% APR",
+    "shipping": "Shipping",
+    "shippingCost": "FREE",
+    "subtotal": "Subtotal",
+    "subtitle": "Free delivery and returns",
+    "tax": "Estimated tax for:",
+    "taxCost": "$ -",
+    "title": "Review your bag",
+    "title1": "Your bag is empty",
+    "total": "Total",
+    "zip": "Enter zip code"
+  },
+  "checkoutProduct": {
+    "remove": "Remove",
+    "showDetails": "Show product details"
+  },
+  "header": {
+    "navbarbutton": "Product",
+    "navbarbutton1": "Explore",
+    "navbarbutton2": "Support",
+    "navbarbutton3": "Business"
+  },
+  "home": {
+    "title": "New Promos"
+  },
+  "landing": {
+    "button": "Buy Now",
+    "button1": "Learn More",
+    "title": "Iphone 15",
+    "title1": "Unleash",
+    "title2": "The Power"
+  },
+  "product": {
+    "toastsuccess": " added to basket"
+  },
+  "success": {
+    "title:": "Thank you! - i-Store",
+    "order": "Order #",
+    "thankYou": "Thank you ",
+    "guest": "Guest",
+    "orderConfirmed": "Your order is confirmed",
+    "orderAccepted": "We’ve accepted your order, and we’re getting it ready. Come back to this page for updates on your shipment status.",
+    "trackingNumber": "Order tracking number:",
+    "orderUpdates": "Order updates",
+    "updateInfo": "You’ll get shipping and delivery updates by email and text.",
+    "needHelp": "Need help? Contact us",
+    "button": "Continue Shopping",
+    "showOrder": "Show order summary",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "shipping": "Shipping",
+    "total": "Total",
+    "currency": "USD"
+  }
+}

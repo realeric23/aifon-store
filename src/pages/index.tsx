@@ -5,10 +5,11 @@ import Product from "@/components/Product";
 import { fetchCategories } from "@/utils/fetchCategories";
 import { fetchProducts } from "@/utils/fetchProducts";
 import { Tab } from "@headlessui/react";
-import { GetServerSideProps, NextPage } from "next";
+import { GetServerSideProps } from "next";
 import { Session } from "next-auth";
 import { getSession } from "next-auth/react";
 import Head from "next/head";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   categories: Category[];
@@ -43,6 +44,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 const Home = ({ categories, products }: Props) => {
+  const { t } = useTranslation();
+  const SCREEN_NAME = "home";
   const showProducts = (categoryId: string) => {
     return products
       .filter(
@@ -58,7 +61,7 @@ const Home = ({ categories, products }: Props) => {
   return (
     <>
       <Head>
-        <title>Aifon Store</title>
+        <title>i-Store</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -73,7 +76,7 @@ const Home = ({ categories, products }: Props) => {
       <section className="relative z-4 -mt-[100vh] min-h-screen bg-[#1B1B1B]">
         <div className="space-y-10 py-16">
           <h1 className="text-center text-4xl font-medium tracking-wide text-white md:text-5xl">
-            New Promos
+            {t(`${SCREEN_NAME}.title`)}
           </h1>
 
           <Tab.Group>

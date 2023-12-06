@@ -1,18 +1,20 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import { selectBasketItems } from "@/redux/basketSlice";
 import {
   SearchIcon,
   ShoppingBagIcon,
   UserIcon,
 } from "@heroicons/react/outline";
-import { selectBasketItems } from "@/redux/basketSlice";
-import { useSelector } from "react-redux";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Image from "next/image";
+import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 function Header() {
   const { data: session } = useSession();
   const items = useSelector(selectBasketItems);
+  const { t } = useTranslation();
+  const SCREEN_NAME = "header";
 
   return (
     <header className="sticky top-0 z-30 flex w-full items-center justify-between bg-[#E7ECEE] p-4">
@@ -30,10 +32,10 @@ function Header() {
       </div>
 
       <div className="hidden flex-1 items-center justify-center space-x-8 md:flex">
-        <a className="headerLink">Product</a>
-        <a className="headerLink">Explore</a>
-        <a className="headerLink">Support</a>
-        <a className="headerLink">Business</a>
+        <a className="headerLink">{t(`${SCREEN_NAME}.navbarbutton`)}</a>
+        <a className="headerLink">{t(`${SCREEN_NAME}.navbarbutton1`)}</a>
+        <a className="headerLink">{t(`${SCREEN_NAME}.navbarbutton2`)}</a>
+        <a className="headerLink">{t(`${SCREEN_NAME}.navbarbutton3`)}</a>
       </div>
 
       <div className="flex items-center justify-center gap-x-4 md:w-1/5">

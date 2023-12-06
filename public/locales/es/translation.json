@@ -1,0 +1,63 @@
+{
+  "checkout": {
+    "appleCard": "con Apple Card",
+    "button": "Realizar pago con cuotas mensuales de Apple Card",
+    "button1": "Pagar",
+    "checkout": "¿Cómo te gustaría pagar?",
+    "conditions": "$0.00 hoy, lo que incluye artículos a precio total, pagos iniciales, envío e impuestos aplicables.",
+    "fullPrice": "Pagar el total",
+    "hardcodedPrice": "$283.16/mes al 0% de interés",
+    "shipping": "Envío",
+    "shippingCost": "GRATIS",
+    "subtotal": "Subtotal",
+    "tax": "Impuesto estimado para:",
+    "subtitle": "Envios y devoluciones gratis",
+    "taxCost": "$ -",
+    "title": "Revisa tu bolsa",
+    "title1": "Tu bolsa está vacía",
+    "total": "Total",
+    "zip": "Ingrese el código postal"
+  },
+  "checkoutProduct": {
+    "remove": "Eliminar",
+    "showDetails": "Mostrar detalles del producto"
+  },
+  "header": {
+    "navbarbutton": "Producto",
+    "navbarbutton1": "Explorar",
+    "navbarbutton2": "Soporte",
+    "navbarbutton3": "Negocios"
+  },
+  "home": {
+    "title": "Nuevas Promociones"
+  },
+  "landing": {
+    "button": "Comprar ahora",
+    "button1": "Saber más",
+    "title": "Iphone 15",
+    "title1": "Libera",
+    "title2": "El Poder"
+  },
+  "product": {
+    "toastsuccess": " agregado al carrito"
+  },
+  "success": {
+    "title": "¡Gracias i-Store!",
+    "order": "Orden #",
+    "thankYou": "Gracias ",
+    "guest": "Invitado",
+    "orderConfirmed": "Tu orden está confirmada",
+    "orderAccepted": "Hemos aceptado tu orden y la estamos preparando. Vuelve a esta página para actualizaciones sobre el estado de envío.",
+    "trackingNumber": "Número de seguimiento de la orden:",
+    "orderUpdates": "Actualizaciones de la orden",
+    "updateInfo": "Recibirás actualizaciones de envío y entrega por correo electrónico y mensaje de texto.",
+    "needHelp": "¿Necesitas ayuda? Contáctanos",
+    "button": "Continuar comprando",
+    "showOrder": "Mostrar resumen de la orden",
+    "subtotal": "Subtotal",
+    "discount": "Descuento",
+    "shipping": "Envío",
+    "total": "Total",
+    "currency": "USD"
+  }
+}

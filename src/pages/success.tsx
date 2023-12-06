@@ -7,20 +7,23 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/outline";
 import { GetServerSideProps } from "next";
+import { useSession } from "next-auth/react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
+import { useEffect, useState } from "react";
 import Currency from "react-currency-formatter";
-import { useSession } from "next-auth/react";
+import { useTranslation } from "react-i18next";
+import { useMediaQuery } from "react-responsive";
 
 interface Props {
   products: StripeProduct[];
 }
 
 function Success({ products }: Props) {
+  const { t } = useTranslation();
+  const SCREEN_NAME = "success";
   const { data: session } = useSession();
   const router = useRouter();
   const { session_id } = router.query;
@@ -45,7 +48,7 @@ function Success({ products }: Props) {
   return (
     <div>
       <Head>
-        <title> Thank you! - Aifon Store</title>
+        <title>{t(`${SCREEN_NAME}.title`)}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className="mx-auto max-w-xl">
@@ -55,7 +58,7 @@ function Success({ products }: Props) {
               src="https://rb.gy/vsvv2o"
               fill
               style={{ objectFit: "contain" }}
-              alt="Aifon Store Logo"
+              alt="i-Store Logo"
             />
           </div>
         </Link>
@@ -69,7 +72,7 @@ function Success({ products }: Props) {
                 src="https://rb.gy/vsvv2o"
                 fill
                 style={{ objectFit: "contain" }}
-                alt="Aifon Store Logo"
+                alt="i-Store Logo"
               />
             </div>
           </Link>
@@ -80,41 +83,43 @@ function Success({ products }: Props) {
             </div>
             <div>
               <p className="text-sm text-gray-600">
-                Order #{session_id?.slice(-5)}
+                {t(`${SCREEN_NAME}.order`)}
+                {session_id?.slice(-5)}
               </p>
               <h4 className="text-lg">
-                Thank you {session?.user?.name?.split(" ")[0] || "Guest"}
+                {t(`${SCREEN_NAME}.thankYou`)}
+                {session?.user?.name?.split(" ")[0] ||
+                  t(`${SCREEN_NAME}.guest`)}
               </h4>
             </div>
           </div>
 
           <div className="mx-4 divide-y divide-gray-300 rounded-md border border-gray-300 p-4 lg:ml-14">
             <div className="space-y-2 pb-3">
-              <p>Your order is confirmed</p>
+              <p>{t(`${SCREEN_NAME}.orderConfirmed`)}</p>
               <p className="text-sm text-gray-600">
-                We’ve accepted your order, and we’re getting it ready. Come back
-                to this page for updates on your shipment status.
+                {t(`${SCREEN_NAME}.orderAccepted`)}
               </p>
             </div>
             <div className="pt-3 text-sm">
               <p className="font-medium text-gray-600">
-                Other tracking number:
+                {t(`${SCREEN_NAME}.trackingNumber`)}
               </p>
               <p>CNB2144162</p>
             </div>
           </div>
 
           <div className="my-4 mx-4 space-y-2 rounded-md border border-gray-300 p-4 lg:ml-14">
-            <p>Order updates</p>
+            <p>{t(`${SCREEN_NAME}.orderUpdates`)}</p>
             <p className="text-sm text-gray-600">
-              You’ll get shipping and delivery updates by email and text.
+              {t(`${SCREEN_NAME}.updateInfo`)}
             </p>
           </div>
           <div className="mx-4 flex flex-col items-center justify-between text-sm lg:ml-14 lg:flex-row">
-            <p className="hidden lg:inline">Need help? Contact us</p>
+            <p className="hidden lg:inline"> {t(`${SCREEN_NAME}.needHelp`)}</p>
             {mounted && (
               <Button
-                title="Continue Shopping"
+                title={t(`${SCREEN_NAME}.button`)}
                 onClick={() => router.push("/")}
                 width={isTabletOrMobile ? "w-full" : undefined}
                 padding="py-4"
@@ -136,7 +141,7 @@ function Success({ products }: Props) {
                   className="flex items-center space-x-2"
                 >
                   <ShoppingCartIcon className="h-6 w-6" />
-                  <p>Show order summary</p>
+                  <p>{t(`${SCREEN_NAME}.showOrder`)}</p>
                   {showOrderSummaryCondition ? (
                     <ChevronUpIcon className="h-4 w-4" />
                   ) : (
@@ -184,26 +189,32 @@ function Success({ products }: Props) {
                 </div>
                 <div className="space-y-1 py-4">
                   <div className="flex justify-between text-sm">
-                    <p className="text-[gray]">Subtotal</p>
+                    <p className="text-[gray]">
+                      {t(`${SCREEN_NAME}.subtotal`)}
+                    </p>
                     <p className="font-medium">
                       <Currency quantity={subtotal} />
                     </p>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <p className="text-[gray]">Discount</p>
+                    <p className="text-[gray]">
+                      {t(`${SCREEN_NAME}.discount`)}
+                    </p>
                     <p className="text-[gray]"></p>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <p className="text-[gray]">Shipping</p>
+                    <p className="text-[gray]">
+                      {t(`${SCREEN_NAME}.shipping`)}
+                    </p>
                     <p className="font-medium">
                       <Currency quantity={20} currency="USD" />
                     </p>
                   </div>
                 </div>
                 <div className="flex justify-between pt-4">
-                  <p>Total</p>
+                  <p>{t(`${SCREEN_NAME}.total`)}</p>
                   <p className="flex items-center gap-x-2 text-xs text-[gray]">
-                    USD
+                    {t(`${SCREEN_NAME}.currency`)}
                     <span className="text-xl font-medium text-black">
                       <Currency quantity={subtotal + 20} />
                     </span>

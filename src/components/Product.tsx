@@ -1,21 +1,23 @@
-import React from "react";
-import { urlFor } from "../../sanity";
-import Image from "next/image";
-import { ShoppingCartIcon } from "@heroicons/react/outline";
-import { useDispatch } from "react-redux";
 import { addToBasket } from "@/redux/basketSlice";
+import { ShoppingCartIcon } from "@heroicons/react/outline";
+import Image from "next/image";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { urlFor } from "../../sanity";
 
 interface Props {
   product: Product;
 }
 
 function Product({ product }: Props) {
+  const { t } = useTranslation();
+  const SCREEN_NAME = "product";
   const dispatch = useDispatch();
   const addItemToBasket = () => {
     dispatch(addToBasket(product));
 
-    toast.success(`${product.title} added to basket`, {
+    toast.success(`${product.title} ${t(`${SCREEN_NAME}.toastsuccess`)}`, {
       position: "bottom-center",
     });
   };
