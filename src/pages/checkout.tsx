@@ -87,7 +87,7 @@ function Checkout() {
           <p className="my-4">{t(`${SCREEN_NAME}.subtitle`)}</p>
           {items.length === 0 && (
             <Button
-              title="Continue Shopping"
+              title={t(`${SCREEN_NAME}.continue`)}
               onClick={() => router.push("/")}
             />
           )}

@@ -5,6 +5,7 @@
     "button1": "Check Out",
     "checkout": "How would you like to check out?",
     "conditions": "$0.00 due today, which includes applicable full-price items, down payments, shipping, and taxes.",
+    "monthly": "Pay monthly",
     "fullPrice": "Pay in full",
     "hardcodedPrice": "$283.16/mo. at 0% APR",
     "shipping": "Shipping",
@@ -16,7 +17,8 @@
     "title": "Review your bag",
     "title1": "Your bag is empty",
     "total": "Total",
-    "zip": "Enter zip code"
+    "zip": "Enter zip code",
+    "continue": "Continue Shopping"
   },
   "checkoutProduct": {
     "remove": "Remove",

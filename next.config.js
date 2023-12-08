@@ -51,4 +51,13 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = async () => {
+  const navigatorLanguage = process.browser ? navigator.language : "en";
+  const updatedConfig = { ...nextConfig };
+
+  if (nextConfig.i18n.locales.includes(navigatorLanguage)) {
+    updatedConfig.i18n.defaultLocale = navigatorLanguage;
+  }
+
+  return updatedConfig;
+};

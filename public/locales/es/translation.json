@@ -5,6 +5,7 @@
     "button1": "Pagar",
     "checkout": "¿Cómo te gustaría pagar?",
     "conditions": "$0.00 hoy, lo que incluye artículos a precio total, pagos iniciales, envío e impuestos aplicables.",
+    "monthly": "Pagalo mensualmente",
     "fullPrice": "Pagar el total",
     "hardcodedPrice": "$283.16/mes al 0% de interés",
     "shipping": "Envío",
@@ -16,7 +17,8 @@
     "title": "Revisa tu bolsa",
     "title1": "Tu bolsa está vacía",
     "total": "Total",
-    "zip": "Ingrese el código postal"
+    "zip": "Ingrese el código postal",
+    "continue": "Continua Comprando"
   },
   "checkoutProduct": {
     "remove": "Eliminar",
