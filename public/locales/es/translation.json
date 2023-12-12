@@ -41,7 +41,8 @@
     "title2": "El Poder"
   },
   "product": {
-    "toastsuccess": " agregado al carrito"
+    "toastsuccess": " agregado al carrito",
+    "new": "NUEVO"
   },
   "success": {
     "title": "¡Gracias i-Store!",

@@ -41,7 +41,8 @@
     "title2": "The Power"
   },
   "product": {
-    "toastsuccess": " added to basket"
+    "toastsuccess": " added to basket",
+    "new": "NEW"
   },
   "success": {
     "title:": "Thank you! - i-Store",
