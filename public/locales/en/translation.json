@@ -42,7 +42,8 @@
   },
   "product": {
     "toastsuccess": " added to basket",
-    "new": "NEW"
+    "new": "NEW",
+    "buy": "Buy"
   },
   "success": {
     "title:": "Thank you! - i-Store",

@@ -49,6 +49,11 @@ const Product: SchemaTypeDefinition = {
       title: 'Description',
       type: 'blockContent',
     },
+    {
+      name: 'new',
+      title: 'New',
+      type: 'boolean',
+    },
   ],
   preview: {
     select: {title: 'title', media: 'image'},

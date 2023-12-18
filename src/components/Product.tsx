@@ -1,5 +1,4 @@
 import { addToBasket } from "@/redux/basketSlice";
-import { ShoppingCartIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
@@ -24,7 +23,7 @@ function Product({ product }: Props) {
   };
 
   return (
-    <div className="flex h-fit w-[320px] select-none flex-col space-y-3 rounded-xl bg-[#35383C] p-8 md:h-[500px] md-w-[400px] md:p-10 hover:translate-y-[-2px]">
+    <div className="flex h-fit w-[320px] select-none flex-col space-y-3 rounded-xl bg-[#35383C] p-8 md:h-[400px] md-w-[350px] md:p-10 hover:translate-y-[-2px]">
       {/*   TODO CONDITION */}
       {product.new && (
         <div className="space-y-2 text-base text-pink-500 md:text-sm ">
@@ -46,13 +45,12 @@ function Product({ product }: Props) {
           <p>{product.price}</p>
         </div>
 
-        {/*  TODO BUY BUTTON */}
-        <div
-          className="flex h-16 w-16 flex-shrink-0 cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-violet-500 md:h-[70px] md:w-[70px]"
-          onClick={addItemToBasket}
+        <button
+          type="button"
+          className="text-white bg-gradient-to-r from-pink-500 to-violet-500 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
-          <ShoppingCartIcon className="h-8 w-8 text-white" />
-        </div>
+          {t(`${SCREEN_NAME}.buy`)}
+        </button>
       </div>
     </div>
   );
