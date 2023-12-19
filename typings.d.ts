@@ -26,6 +26,7 @@ interface Product {
   _rev: string;
   _type: "product";
   title: string;
+  new: boolean;
   price: number;
   slug: {
     _type: "slug";
