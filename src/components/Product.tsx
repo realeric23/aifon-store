@@ -24,7 +24,6 @@ function Product({ product }: Props) {
 
   return (
     <div className="flex h-fit w-[320px] select-none flex-col space-y-3 rounded-xl bg-[#35383C] p-8 md:h-[400px] md-w-[350px] md:p-10 hover:translate-y-[-2px]">
-      {/*   TODO CONDITION */}
       {product.new && (
         <div className="space-y-2 text-base text-pink-500 md:text-sm ">
           <p>{t(`${SCREEN_NAME}.new`)}</p>
